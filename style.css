@@ -58,7 +58,14 @@ img {
     background: linear-gradient(135deg, #ff8c42, #f6762c);
 }
 
-
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 11;
+}
 
 .header {
     padding: 25px 0;
@@ -114,6 +121,9 @@ img {
 .header__link--active:hover{
     opacity: 0.8;
 }
+
+
+
 
 /*============== WELCOME */
 
@@ -470,6 +480,8 @@ footer .footer__title  {
     margin-bottom: 20px;
 }
 
+
+
 .footer__link{
      opacity: 0.8;
      display: flex;
@@ -663,7 +675,7 @@ font-size: 40px;
 
 @media (max-width : 500px) {
 .header .container{
-    flex-direction: column;
+   
     gap: 10px;
 }
 
@@ -672,8 +684,67 @@ font-size: 40px;
     justify-content: space-evenly; */
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 20px;
+   padding-top: 40px;
 }
+
+
+
+
+/* Навигация по умолчанию скрыта на мобилках */
+.header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 10;
+}
+
+.header__nav.active {
+    right: 0;
+}
+
+
+
+.header__link {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 8;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.burger-menu {
+        display: block;
+        color:#f6762c;
+    }
+
+.welcome .container {
+    z-index: 0;
+}
+
 
 .welcome {
    margin-top: -240px;
@@ -681,9 +752,6 @@ font-size: 40px;
    padding-bottom: 80px;
 }
 
-.welcome__subtitle{
-   
-}
 
 .welcome__title{
     font-size: 30px;
