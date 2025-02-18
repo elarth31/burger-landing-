@@ -78,8 +78,31 @@ img {
 .header__link{
     font-size: 14px;
     opacity: 0.7;
-    transition: opacity 0.3s;
+    transition: color 0.3s ease;
+    position: relative;
+    text-decoration: none;
 }
+
+
+.header__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #f6762c;
+    transition: width 0.3s ease;
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
+
+.header__link:hover {
+    color: #f6762c;
+}
+
 
 .header__link--active{
     font-weight: 700;
@@ -148,8 +171,17 @@ img {
     background-color: #312f30;
     text-align: center;
     border-radius: 10px;
-    overflow: hidden;  /* чтобы фото карточки тоже округлилось через бордер  */
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.food-list__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 .food-list__image {
     width: 100%;
@@ -247,11 +279,21 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product__card:nth-child(even) {
     padding-left: 30px;
     padding-right: 290px;
+}
+
+
+.product__card:hover {
+    transform: translateY(-5px);
+    /* Поднимаем карточку */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    /* Добавляем более заметную тень */
 }
 
 .product__title {
@@ -316,6 +358,25 @@ img {
     align-items: center;
     justify-content: space-between;
     max-width: 880px;
+}
+
+.feedback__images {
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .feedback__text {

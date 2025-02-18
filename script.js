@@ -1,3 +1,6 @@
+AOS.init();
+
+
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
   window.addEventListener('scroll', function () {

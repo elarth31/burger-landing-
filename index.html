@@ -11,6 +11,7 @@
     />
     <title>Burger</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <header class="header">
@@ -118,7 +119,12 @@
       </section>
       <section class="order">
         <div class="container">
-          <img src="./images/burger.png" alt="" class="order__img" />
+          <img
+            data-aos="fade-right"
+            src="./images/burger.png"
+            alt=""
+            class="order__img"
+          />
 
           <div class="order__text">
             <h3 class="order__title">Burger King</h3>
@@ -269,5 +275,13 @@
     <!-- Кнопка вверх -->
     <button class="scroll-to-top" id="scrollToTopBtn">&#8679;</button>
     <script type="module" src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // продолжительность анимации
+        once: true, // анимация будет воспроизводиться только один раз
+        mirror: false, // анимация не будет повторяться при прокрутке в обе стороны
+      });
+    </script>
   </body>
 </html>
